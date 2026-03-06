@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sağlam Həyat Tərzi</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f0fdf4; color:#333; }
+  header { background:#34d399; color:white; padding:25px 10px; text-align:center; }
+  nav { background:#10b981; display:flex; justify-content:center; flex-wrap:wrap; gap:15px; padding:10px; }
+  nav a { color:white; text-decoration:none; font-weight:bold; padding:8px 12px; border-radius:5px; transition:0.3s; }
+  nav a:hover { background:#059669; }
+  section { padding:20px; max-width:900px; margin:auto; }
+  h2 { color:#047857; text-align:center; margin-bottom:15px; }
+  .card { background:white; padding:15px; margin:15px 0; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
+  .card:hover { transform:translateY(-5px); box-shadow:0 6px 15px rgba(0,0,0,0.15); }
+  button { background:#10b981; color:white; border:none; padding:10px 15px; border-radius:8px; cursor:pointer; transition:0.3s; }
+  button:hover { background:#059669; }
+  img { max-width:100%; border-radius:10px; margin-top:10px; }
+  .quiz { margin-top:20px; text-align:center; }
+  @media (max-width:600px){ nav { flex-direction:column; } .card { margin:10px 5px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Sağlam Həyat Tərzi</h1>
+  <p>Gündəlik enerji və sağlamlıq üçün faydalı məlumatlar!</p>
+</header>
+
+<nav>
+  <a href="#home">Ana Səhifə</a>
+  <a href="#sport">İdman</a>
+  <a href="#nutrition">Qidalanma</a>
+  <a href="#mental">Ruh Sağlamlığı</a>
+  <a href="#interactive">Interaktiv</a>
+</nav>
+
+<section id="home">
+  <h2>Ana Səhifə</h2>
+  <div class="card">
+    <p><strong>Günün Tövsiyəsi:</strong> Səhər 10 dəqiqə yüngül gediş enerji verir və gününüzü yaxşı başlayır!</p>
+    <img src="https://images.pexels.com/photos/669575/pexels-photo-669575.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gediş">
+  </div>
+</section>
+
+<section id="sport">
+  <h2>İdman və Fəaliyyət</h2>
+  <div class="card">
+    <h3>Evdə Sadə Məşq</h3>
+    <ul>
+      <li>15 squat</li>
+      <li>10 push-up</li>
+      <li>30 saniyə plank</li>
+    </ul>
+    <img src="https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Evdə məşq">
+  </div>
+</section>
+
+<section id="nutrition">
+  <h2>Qidalanma və Diyet</h2>
+  <div class="card">
+    <h3>Sağlam Səhər Yeməyi</h3>
+    <ul>
+      <li>Yulaf + Süd + Meyvə</li>
+      <li>Qoz-fındıq</li>
+      <li>Yaşıl çay</li>
+    </ul>
+    <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Sağlam yemək">
+  </div>
+</section>
+
+<section id="mental">
+  <h2>Ruh Sağlamlığı</h2>
+  <div class="card">
+    <h3>Stressi Azaltmaq Üçün</h3>
+    <ul>
+      <li>Gündə 5 dəqiqə dərin nəfəs məşqləri</li>
+      <li>Qısa meditasiya</li>
+      <li>Yürüş və açıq havada vaxt keçirmək</li>
+    </ul>
+    <img src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Meditasiya">
+  </div>
+</section>
+
+<section id="interactive">
+  <h2>Interaktiv Bölmə</h2>
+  
+  <div class="card">
+    <h3>Günün Faydalı Fakta</h3>
+    <p id="fact">Səhər yeməyi günün ən vacib yeməyidir.</p>
+    <button onclick="changeFact()">Faktı dəyiş</button>
+  </div>
+
+  <div class="card quiz">
+    <h3>Quiz: Sağlamlıq Bilikləri</h3>
+    <p>Su bədəni üçün vacibdirmi?</p>
+    <button onclick="checkAnswer(true)">Bəli</button>
+    <button onclick="checkAnswer(false)">Xeyr</button>
+    <p id="quizResult"></p>
+  </div>
+</section>
+
+<script>
+  const facts = [
+    "Səhər yeməyi günün ən vacib yeməyidir.",
+    "Hər gün 30 dəqiqə gediş ürək sağlamlığı üçün faydalıdır.",
+    "Meyvə və tərəvəz qəbulunu artırmaq immuniteti gücləndirir.",
+    "Yuxu keyfiyyəti sağlamlıq üçün çox önəmlidir."
+  ];
+
+  function changeFact(){
+    const factElement = document.getElementById("fact");
+    const randomFact = facts[Math.floor(Math.random()*facts.length)];
+    factElement.textContent = randomFact;
+  }
+
+  function checkAnswer(answer){
+    const result = document.getElementById("quizResult");
+    if(answer) {
+      result.textContent = "Doğru! Su həyati vacibdir 💧";
+    } else {
+      result.textContent = "Səhv! Su bədəni üçün çox vacibdir.";
+    }
+  }
+</script>
+
+</body>
+</html>
